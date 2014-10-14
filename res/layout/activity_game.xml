@@ -1,0 +1,123 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:stretchColumns="1"
+        tools:context="${relativePackage}.${activityClass}" >
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:layout_span="4"
+                android:background="@drawable/res_1" >
+                
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_span="4"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/game_present"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#f8a74b"
+                    android:text="餐厅有礼"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/game_question"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00a6e4"
+                    android:text="答题赢大奖"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_span="4"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/game_memory"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#ad92d5"
+                    android:text="记忆力翻牌"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/game_guess"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#85bb4b"
+                    android:text="那些菜名儿"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_span="4"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/game_more1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#61bafe"
+                    android:text="更多惊喜ing..."
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/game_more2"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fd966b"
+                    android:text="更多惊喜ing..."
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
