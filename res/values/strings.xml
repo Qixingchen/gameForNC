@@ -4,5 +4,6 @@
     <string name="app_name">GameForResord</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_memory_flip">Memory_flip</string>
 
 </resources>

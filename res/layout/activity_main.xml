@@ -1,0 +1,210 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#808080"
+    tools:context="com.example.studayfather.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:background="#EEEEEE"
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="看图猜菜名"
+        android:textColor="#ff9900"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/hint"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_border" />
+    
+    <TextView
+        android:background="#EEEEEE"
+        android:id="@+id/uranswer"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:text="你的答案"
+        android:textColor="#ff9900"
+        android:textSize="24sp"  />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/uranswer"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="#bfbfbf"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button1.1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button1.2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button1.3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button1.4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button1.5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="86.3dp"
+                android:layout_height="40dp"
+                android:text="撤 销"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button2.1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button2.2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button2.3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button2.4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button2.5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button2.6"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button3.1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button3.2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button3.3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button3.4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button3.5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button3.6"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="43.3dp"
+                android:layout_height="40dp"
+                android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+
+    
+
+</RelativeLayout>
