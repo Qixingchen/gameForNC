@@ -30,21 +30,4 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>res/drawable-hdpi/dish_1.png</name>
-			<type>1</type>
-			<location>C:/Users/Administrator.OBOR9TPDMRNATOS/Desktop/dish_1.png</location>
-		</link>
-		<link>
-			<name>res/drawable-hdpi/dish_2.png</name>
-			<type>1</type>
-			<location>C:/Users/Administrator.OBOR9TPDMRNATOS/Desktop/dish_2.png</location>
-		</link>
-		<link>
-			<name>res/drawable-hdpi/res_1.png</name>
-			<type>1</type>
-			<location>C:/Users/Administrator.OBOR9TPDMRNATOS/Desktop/res_1.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>

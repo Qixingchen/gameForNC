@@ -18,13 +18,14 @@
             font-family: Arial;
         }
 
-        .cr {
+        .copyrightclass {
             color: rgba(135, 135, 135, 0.55);
-            left: 160px;
+            left: 170px;
             top: 15px;
             font-size: 12px;
             position: absolute;
         }
+
 
         .clear {
             clear: both;
@@ -46,14 +47,6 @@
 
         .box {
             width: initial;
-        }
-
-        .scene {
-            height: initial;
-            position: absolute;
-            top: 95px;
-            left: 1%;
-            right: 1%;
         }
 
         #footer {
@@ -141,7 +134,7 @@
 
         .demo {
             display: block;
-            width: 120px;
+            width: 140px;
             text-align: center;
             background: #80CB1B;
             font-size: 12px;
@@ -184,18 +177,27 @@
 
         .site {
             position: absolute;
-            left: 10px;
-            top: 10px;
+            left: 0px;
+            top: 0px;
         }
+
 
         .Bgmusic {
             position: absolute;
-            left: 20px;
-            top: 44px;
+            left: 0px;
+            top: 30px;
+        }
+
+        .scene {
+            height: initial;
+            position: absolute;
+            top: 60px;
+            left: 1%;
+            right: 1%;
         }
     </style>
 </head>
-<body style="width:1100px" onresize="onresize()">
+<body onresize="onresize()">
     <div class="turning2" id="footer">
         比赛完成
     </div>
@@ -204,20 +206,16 @@
 
     <div id="Begin" class="demo site">重新开始</div>
 
+    <div id="musicplayerstop" class="demo Bgmusic">暂停/播放音乐</div>
+
     <!--版权信息-->
-    <div id=" copyright" class="cr">PIC:twitter@karamone_ze</div>
+    <div id="copyright" class="copyrightclass">PIC:twitter@karamone_ze</div>
 
-    <!--背景音乐-->
-    <audio class="Bgmusic" controls="controls" autoplay="autoplay" loop="loop">
-        <source src="sound/bg.mp3" />
-    </audio>
-
-    <!--音效-->
-    <audio id="dingmusic">
-        <source src="sound/ding.mp3" />
-    </audio>
 
     <script type="text/javascript">
+
+        musicplayer.playAudio("Memory-flip/sound/bg.mp3");
+
 
         var $ = function (obj) { return document.getElementById(obj); }
 
@@ -247,7 +245,7 @@
             var imgs, bgs;
             var picbox_w = picbox.offsetWidth;
             var picbox_h = picbox_w * 4 / 5;//在此修改图片比例!
-            for (var i = 0; i < 18; i++) {
+            for (var i = 0; i < model.length; i++) {
                 picbox = document.getElementById("box" + i);
                 picbox.style.height = picbox_h + 'px';
                 imgs = document.getElementById("img" + i);
@@ -276,7 +274,6 @@
         for (var i = 0, len = aBtn.length; i < len; i++) {
             aBtn[i].onclick = function () {
                 var self = this;
-                ding.play();
                 count_sum++;
                 $("Begin").textContent = "重新开始 已点击" + count_sum + "步";
                 if (cacheObj == self) {
@@ -302,14 +299,16 @@
                                 cacheObj.className = "box";
                             }
                             cacheObj = null;
-                        }, 300);
+                        }, 700);
 
                     }
                 }
-                if (count == 9) {
+                if (count == model.length/2) {
                     setTimeout(function () {
                         $("scene").className = "scene turning2";
                         $("footer").className = "turning1";
+                        returnans.returnans(count_sum);
+
                     }, 300)
                 }
             }
@@ -317,6 +316,10 @@
         }
         $("Begin").onclick = function () {
             location.reload();
+        }
+
+        $("musicplayerstop").onclick = function () {
+            musicplayer.pauseAudio();
         }
 
     </script>
