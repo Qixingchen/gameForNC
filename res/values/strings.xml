@@ -4,5 +4,10 @@
     <string name="app_name">游戏界面</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="MemoryFlip_introductionTitle">记忆翻牌介绍</string>
+    <string name="MemoryFlip_introductionMessage">这是个翻牌游戏\n 游戏中点击任意两张牌，若相同则可翻开\n 
+        考验你的记忆力，力争用最少的次数翻开所有的牌</string>
+    <string name="MemoryFlip_introductionOk">朕知道了</string>
+    <string name="MemoryFlip_introductionCancel">朕不玩了</string>
 
 </resources>

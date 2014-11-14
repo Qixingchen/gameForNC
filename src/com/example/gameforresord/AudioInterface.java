@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.util.Log;
-import android.webkit.JavascriptInterface;
 
 public class AudioInterface {
 	Context mContext;
@@ -18,7 +17,6 @@ public class AudioInterface {
 	}
 
 	// Play an audio file from the webpage
-	@JavascriptInterface
 	public void playAudio(String aud) { // String aud - file name passed
 										// from the JavaScript function
 
@@ -48,18 +46,14 @@ public class AudioInterface {
 	}
 
 	// 返回true 表示被暫停
-	@JavascriptInterface
 	public Boolean pauseAudio() {
 		if (mp.isPlaying()) {
 			mp.pause();
 			return true;
-		}
-		else {
+		} else {
 			mp.start();
 			return false;
 		}
-		
-		
-		
+
 	}
 }

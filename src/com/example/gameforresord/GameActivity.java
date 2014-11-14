@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.example.gameforresord.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -47,11 +48,14 @@ public class GameActivity extends Activity {
 	private AdPageAdapter adapter;
 	private AtomicInteger atomicInteger = new AtomicInteger(0);
 	private boolean isContinue = true;
+	private Context activityContext;
+	private MaterialDialog mMaterialDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
+		activityContext = getApplicationContext();
 
 		presentBtn = (Button) findViewById(R.id.game_present);
 		questionBtn = (Button) findViewById(R.id.game_question);
@@ -174,9 +178,35 @@ public class GameActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent question = new Intent(GameActivity.this,
-						Memory_flip.class);
-				startActivity(question);
+				mMaterialDialog = new MaterialDialog(GameActivity.this)
+						.setTitle(
+								getString(R.string.MemoryFlip_introductionTitle))
+						.setMessage(
+								getString(R.string.MemoryFlip_introductionMessage))
+						.setPositiveButton(
+								getString(R.string.MemoryFlip_introductionOk),
+								new View.OnClickListener() {
+									@Override
+									public void onClick(View v) {
+										mMaterialDialog.dismiss();
+										Intent question = new Intent(
+												GameActivity.this,
+												Memory_flip.class);
+										startActivity(question);
+									}
+								})
+						.setNegativeButton(
+								getString(R.string.MemoryFlip_introductionCancel),
+								new View.OnClickListener() {
+									@Override
+									public void onClick(View v) {
+										mMaterialDialog.dismiss();
+
+									}
+								});
+
+				mMaterialDialog.show();
+
 			}
 		});
 

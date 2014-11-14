@@ -1,7 +1,6 @@
 package com.example.gameforresord;
 
 import android.content.Context;
-import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
 public class ReturnTouchNumber {
@@ -13,7 +12,6 @@ public class ReturnTouchNumber {
 		mContext = c;
 	}
 
-	@JavascriptInterface
 	public void returnans(int k) {
 		Toast.makeText(mContext, String.valueOf(k), Toast.LENGTH_LONG).show();
 	}

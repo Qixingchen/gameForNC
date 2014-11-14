@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="gameWebviewUrl">file:///android_asset/Memory-flip/index.html</string>
-    
+
+    <string name="gameWebviewUrl">http://nc.xing.moe/index.html</string>
+
 </resources>
