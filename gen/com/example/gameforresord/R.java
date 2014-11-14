@@ -2007,11 +2007,6 @@ containing a value of this type.
          */
         public static final int abc_text_size_title_material_toolbar=0x7f070012;
         /**  Default screen margins, per the Android Design guidelines. 
-
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    
          */
         public static final int activity_horizontal_margin=0x7f07002b;
         public static final int activity_vertical_margin=0x7f07002c;
@@ -2299,6 +2294,7 @@ containing a value of this type.
         public static final int MemoryFlip_introductionMessage=0x7f0a0013;
         public static final int MemoryFlip_introductionOk=0x7f0a0014;
         public static final int MemoryFlip_introductionTitle=0x7f0a0012;
+        public static final int SharedPreferencesFileName=0x7f0a0016;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -2354,8 +2350,9 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
         public static final int action_settings=0x7f0a0011;
         public static final int app_name=0x7f0a000f;
-        public static final int gameWebviewUrl=0x7f0a0016;
+        public static final int gameWebviewUrl=0x7f0a0018;
         public static final int hello_world=0x7f0a0010;
+        public static final int isMemoryFlipFirstOpen=0x7f0a0017;
     }
     public static final class style {
         /** 

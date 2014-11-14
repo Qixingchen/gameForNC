@@ -6,9 +6,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import com.example.gameforresord.R;
 
+import android.R.bool;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -178,34 +180,50 @@ public class GameActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				mMaterialDialog = new MaterialDialog(GameActivity.this)
-						.setTitle(
-								getString(R.string.MemoryFlip_introductionTitle))
-						.setMessage(
-								getString(R.string.MemoryFlip_introductionMessage))
-						.setPositiveButton(
-								getString(R.string.MemoryFlip_introductionOk),
-								new View.OnClickListener() {
-									@Override
-									public void onClick(View v) {
-										mMaterialDialog.dismiss();
-										Intent question = new Intent(
-												GameActivity.this,
-												Memory_flip.class);
-										startActivity(question);
-									}
-								})
-						.setNegativeButton(
-								getString(R.string.MemoryFlip_introductionCancel),
-								new View.OnClickListener() {
-									@Override
-									public void onClick(View v) {
-										mMaterialDialog.dismiss();
+				final Intent question = new Intent(GameActivity.this,
+						Memory_flip.class);
+				Context context = getApplicationContext();
+				final SharedPreferences sharedPref = context
+						.getSharedPreferences(
+								getString(R.string.SharedPreferencesFileName),
+								Context.MODE_PRIVATE);
+				boolean isMemoryFlipFirstOpen = sharedPref.getBoolean(
+						getString(R.string.isMemoryFlipFirstOpen), true);
+				if (isMemoryFlipFirstOpen) {
+					mMaterialDialog = new MaterialDialog(GameActivity.this)
+							.setTitle(
+									getString(R.string.MemoryFlip_introductionTitle))
+							.setMessage(
+									getString(R.string.MemoryFlip_introductionMessage))
+							.setPositiveButton(
+									getString(R.string.MemoryFlip_introductionOk),
+									new View.OnClickListener() {
+										@Override
+										public void onClick(View v) {
+											mMaterialDialog.dismiss();
+											SharedPreferences.Editor editor = sharedPref
+													.edit();
+											editor.putBoolean(
+													getString(R.string.isMemoryFlipFirstOpen),
+													false);
+											editor.commit();
+											startActivity(question);
+										}
+									})
+							.setNegativeButton(
+									getString(R.string.MemoryFlip_introductionCancel),
+									new View.OnClickListener() {
+										@Override
+										public void onClick(View v) {
+											mMaterialDialog.dismiss();
 
-									}
-								});
+										}
+									});
 
-				mMaterialDialog.show();
+					mMaterialDialog.show();
+				} else {
+					startActivity(question);
+				}
 
 			}
 		});

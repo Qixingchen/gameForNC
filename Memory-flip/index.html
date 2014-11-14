@@ -1,0 +1,329 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- 禁用横向滚动 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>连连看</title>
+
+    <style type="text/css">
+        html {
+            background: #F6F6F1 url("img/main_bg.jpg");
+            background-size: cover;
+        }
+
+        body, div, span, p, var, em, strong, a, h1, h2, h3, h4, h5, h6, input, textarea, ul, li, img {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }
+
+        .copyrightclass {
+            color: rgba(135, 135, 135, 0.55);
+            left: 170px;
+            top: 15px;
+            font-size: 12px;
+            position: absolute;
+        }
+
+
+        .clear {
+            clear: both;
+            overflow: hidden;
+            height: 0;
+        }
+
+        img {
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        .box {
+            width: initial;
+        }
+
+        #footer {
+            height: 800px;
+            font-size: 32px;
+            line-height: 600px;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .box {
+            width: 31%;
+            max-width: 300px;
+            /*比例300:169*/
+            margin: 3px;
+            float: left;
+            position: relative;
+        }
+
+            .box:hover {
+                box-shadow: 2px 2px 10px #000;
+            }
+
+        .bg {
+            display: block;
+            background: url(img/bg.jpg) 0 0 no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition-duration: .3s;
+            transition-property: transform;
+            transform: rotate3d(0,1,0,0deg);
+            -webkit-backface-visibility: hidden;
+            -webkit-transition-duration: .3s;
+            -webkit-transition-property: transform;
+            -webkit-transform: rotate3d(0,1,0,0deg);
+        }
+
+        .img {
+            display: block;
+            background: #F6F6F1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate3d(0,1,0,-180deg);
+            backface-visibility: hidden;
+            transition-duration: .3s;
+            transition-property: transform;
+            -webkit-transform: rotate3d(0,1,0,-180deg);
+            -webkit-backface-visibility: hidden;
+            -webkit-transition-duration: .3s;
+            -webkit-transition-property: transform;
+        }
+
+        .turning1 {
+            transform: rotate3d(0,1,0,0deg);
+            transition-duration: 2.0s;
+            transition-delay: 2.0s;
+            -webkit-transform: rotate3d(0,1,0,0deg);
+            -webkit-transition-duration: 2.0s;
+            -webkit-transition-delay: 2.0s;
+        }
+
+        .turning2 {
+            transform: rotate3d(0,1,0,-270deg);
+            transition-duration: 2.0s;
+            -webkit-transform: rotate3d(0,1,0,-270deg);
+            -webkit-transition-duration: 2.0s;
+        }
+
+
+        .hover .img {
+            transform: rotate3d(0,1,0,0deg);
+            -webkit-transform: rotate3d(0,1,0,0deg);
+        }
+
+        .hover .bg {
+            transform: rotate3d(0,1,0,-180deg);
+            -webkit-transform: rotate3d(0,1,0,-180deg);
+        }
+
+        .demo {
+            display: block;
+            width: 140px;
+            text-align: center;
+            background: #80CB1B;
+            font-size: 12px;
+            -moz-box-shadow: 0 0 5px #343434;
+            -webkit-box-shadow: 0 0 5px #fff;
+            box-shadow: 0 0 5px #343434;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            text-decoration: none;
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            cursor: pointer;
+            -webkit-animation-name: breathingLight;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        @-webkit-keyframes
+
+        'breathingLight' {
+            from;
+
+        {
+            background-color: #80CB1B;
+            -webkit-box-shadow: 0 0 5px #ccc;
+        }
+
+        50% {
+            background-color: #B7F20F;
+            -webkit-box-shadow: 0 0 10px #398B08;
+        }
+
+        to {
+            background-color: #80CB1B;
+            -webkit-box-shadow: 0 0 5px #ccc;
+        }
+
+        }
+
+        .site {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+
+        .Bgmusic {
+            position: absolute;
+            left: 0px;
+            top: 30px;
+        }
+
+        .scene {
+            height: initial;
+            position: absolute;
+            top: 60px;
+            left: 1%;
+            right: 1%;
+        }
+    </style>
+</head>
+<body onresize="onresize()">
+    <div class="turning2" id="footer">
+        比赛完成
+    </div>
+    <div class="scene turning1" id="scene">
+    </div>
+
+    <div id="Begin" class="demo site">重新开始</div>
+
+    <div id="musicplayerstop" class="demo Bgmusic">暂停/播放音乐</div>
+
+    <!--版权信息-->
+    <div id="copyright" class="copyrightclass">PIC:twitter@karamone_ze</div>
+
+
+    <script type="text/javascript">
+
+        musicplayer.playAudio("Memory-flip/sound/bg.mp3");
+
+
+        var $ = function (obj) { return document.getElementById(obj); }
+
+        // 图片模型
+        var model = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        // 随机排列
+        function fn() { return Math.random() - Math.random(); }
+
+        model.sort(fn);
+
+        var html = "";
+
+        //插入html描述
+        for (var i = 0, len = model.length; i < len; i++) {
+            var url = "img/" + model[i] + ".jpg"; //图片地址
+            html += '<div class="box" attr=' + model[i] + ' id="box' + i + '"><span class="bg" id="bg' + i + '"></span><img class="img" id="img' + i + '" src=' + url + ' /></div>';
+        }
+
+
+
+        $("scene").innerHTML = html; // 插入显示数据
+
+        //调整图片比例
+        function onresize() {
+            var picbox = document.getElementById("box1");
+            var imgs, bgs;
+            var picbox_w = picbox.offsetWidth;
+            var picbox_h = picbox_w * 4 / 5;//在此修改图片比例!
+            for (var i = 0; i < model.length; i++) {
+                picbox = document.getElementById("box" + i);
+                picbox.style.height = picbox_h + 'px';
+                imgs = document.getElementById("img" + i);
+                imgs.style.width = picbox_w + 'px';
+                imgs.style.height = picbox_h + 'px';
+                bgs = document.getElementById("bg" + i);
+                bgs.style.width = picbox_w + 'px';
+                bgs.style.height = picbox_h + 'px';
+            }
+        }
+
+        onresize();
+
+
+
+        var cacheObj = null; //缓存数据
+
+        var aBtn = $("scene").getElementsByTagName("div");
+
+        var count = 0;//配对数
+
+        var count_sum = 0;//按键数
+
+        var ding = document.getElementById("dingmusic");//音效
+
+        for (var i = 0, len = aBtn.length; i < len; i++) {
+            aBtn[i].onclick = function () {
+                var self = this;
+                count_sum++;
+                $("Begin").textContent = "重新开始 已点击" + count_sum + "步";
+                if (cacheObj == self) {
+                    return;
+                }
+                self.className = "box hover";
+                if (cacheObj == null)// 判断缓存存在
+                {
+                    cacheObj = self;
+                }
+                else {
+                    if (cacheObj.getAttribute("attr") == self.getAttribute("attr"))// 判断数值 是否相等
+                    {
+                        self.className = cacheObj.className = "box hover";
+                        self.onclick = cacheObj.onclick = null;
+                        cacheObj = null;
+                        count++;
+                    }
+                    else {
+                        setTimeout(function () {
+                            self.className = "box";
+                            if (cacheObj) {
+                                cacheObj.className = "box";
+                            }
+                            cacheObj = null;
+                        }, 700);
+
+                    }
+                }
+                if (count == model.length/2) {
+                    setTimeout(function () {
+                        $("scene").className = "scene turning2";
+                        $("footer").className = "turning1";
+                        returnans.returnans(count_sum);
+
+                    }, 300)
+                }
+            }
+
+        }
+        $("Begin").onclick = function () {
+            location.reload();
+        }
+
+        $("musicplayerstop").onclick = function () {
+            musicplayer.pauseAudio();
+        }
+
+    </script>
+
+</body>
+
+</html>

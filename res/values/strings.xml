@@ -9,5 +9,7 @@
         考验你的记忆力，力争用最少的次数翻开所有的牌</string>
     <string name="MemoryFlip_introductionOk">朕知道了</string>
     <string name="MemoryFlip_introductionCancel">朕不玩了</string>
+    <string name="SharedPreferencesFileName">com.example.gameforresord.FirstDialog</string>
+    <string name="isMemoryFlipFirstOpen">isMemoryFlipFirstOpen</string>
 
 </resources>
